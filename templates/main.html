@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predicting Optimal Soil Nutrient Profiles for Different Crops Using Classification Techniques.</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body >
+
+  <!-- Website Title -->
+
+  <div class="container">
+    <h2 class='container-heading'>
+      <span class="heading_font">Prediction of Crops Based on Soil Nutrients.</span>
+    </h2>
+    <br>
+    <div class='description'>
+      <p>A Machine Learning Web Application that predicts Different types of crops like Grapes,Mango,Mulberry,Potato,Ragi,Promgranate.</p><br>
+    </div>
+  </div>
+
+  <!-- Text Area -->
+  <div class="ml-container">
+    <form action="{{ url_for('predict')}}" method="POST">
+        <label for="N">Nitrogen : </label>
+        <input type="text" id="N" name="N" placeholder=""><br>
+
+        <label for="P">Phosphorous : </label>
+        <input type="text" id="P" name="P" placeholder=""><br>
+
+        <label for="K">Potassium : </label>
+        <input type="text" id="K" name="K" placeholder=""><br>
+
+        <label for="ph">pH</label>
+        <input type="text" id="ph" name="ph" placeholder="less than 14"><br>
+
+        <label for="EC">Electrical Conductivity : </label>
+        <input type="text" id="EC" name="EC" placeholder=""><br>
+
+        <label for="S">Sulphur : </label>
+        <input type="text" id="S" name="S" placeholder=""><br>
+
+        <label for="Cu">Copper : </label>
+        <input type="text" id="Cu" name="Cu" placeholder=""><br>
+
+        <label for="Fe">Iron : </label>
+        <input type="text" id="Fe" name="Fe" placeholder=""><br>
+
+        <label for="Mn">Manganese : </label>
+        <input type="text" id="Mn" name="Mn" placeholder=""><br>
+
+        <label for="Zn">Zinc : </label>
+        <input type="text" id="Zn" name="Zn" placeholder=""><br>
+
+        <label for="B">Boron : </label>
+        <input type="text" id="B" name="B" placeholder=""><br>
+
+         <label for="selectModel">Select Model</label>
+        <select id="selectModel" name="selectModel">
+          <option selected>----select option----</option>
+          <option value="0" selected>Decision Tree</option>
+          <option value="1">Extra Trees</option>
+          <option value="2">Multilayer Perceptron</option>
+          <option value="3">Random Forest</option>
+          <option value="4">XG Boost</option>
+
+        </select><br>
+
+      <input type="submit" class="my-cta-button" value="Predict">
+    </form>
+  </div>
+  <div class='footer'>
+    <p class='footer-description'>Made by Verma Ayush - 211IT079</p>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Predicting Optimal Soil Nutrient Profiles for Different Crops Using Classification Techniques.</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="container">
+            <h2 class='container-heading'>
+                <span class="heading_font">Prediction of Crops Based on Soil Nutrients.</span>
+            </h2>
+            <br>
+            <div class='description'>
+                <p>A Machine Learning Web Application that predicts Different types of crops like Grapes, Mango, Mulberry, Potato, Ragi, and Pomegranate.</p>
+                <br>
+            </div>
+        </div>
+
+        <div class="results">
+            {% set labels1 = ["Decision Tree", "Extra Trees", "Multilayer Perceptron", "Random Forest", "XG Boost"] %}
+            {% set label = ['Grapes', 'Mango', 'Mulberry', 'Pomegranate', 'Potato', 'Ragi'] %}
+            <!-- Display the selected model -->
+            <h3><p>Model Selected : <span class ='danger'>{{ labels1[selection] }}</span></p></h3>
+            
+            <!-- Display the crop label -->
+            <h3> {{labels1[selection]}} Prediction : <span class ='safe'>{{ label[prediction[0]] }}</h3></span>
+
+            {% if prediction[0] == 0 %}
+                <img src="https://1.bp.blogspot.com/-v61jNyBTx0s/VVx0ETJdQ4I/AAAAAAAAAYg/tUkG4eDUu8o/s1600/grapes.jpg" alt="Grapes Prediction" width="300" height="200">
+            {% elif prediction[0] == 1 %}
+                <img src="https://www.meinstyn.com/wp-content/uploads/2022/06/Health-Benefits-of-Mango.jpg" alt="Mango Prediction" width="300" height="200">
+            {% elif prediction[0] == 2 %}
+                <img src="https://www.thespruce.com/thmb/xGMB11OCJeTikgRWVY6jzQ7NxC8=/4759x3171/filters:no_upscale():max_bytes(150000):strip_icc()/growing-mulberry-trees-5077354-03-ba55e1c04dae44728e9b63a7a9a07998.jpg" alt="Mulberry Prediction" width="300" height="200">
+            {% elif prediction[0] == 3 %}
+                <img src="https://cdn.britannica.com/96/201196-050-C0441508/Batch-pomegranate-fruits.jpg" alt="Pomegranate Prediction" width="300" height="200">
+            {% elif prediction[0] == 4 %}
+                <img src="https://cdn.britannica.com/89/170689-131-D20F8F0A/Potatoes.jpg" alt="Potato Prediction" width="300" height="200">
+            {% elif prediction[0] == 5 %}
+                <img src="https://healthyliving.natureloc.com/wp-content/uploads/2018/06/How_to_sprout_ragi_finger_millet-5.jpg" alt="Ragi Prediction" width="300" height="200">
+            {% endif %}
+
+        </div>
+
+        <br>
+        <hr style="width: 50%; background-color: black; height: 4px; margin-bottom: 30px;">
+        <div class="results2">
+            <h3 style="padding: 0px; margin: 5px; color: black;">Project implemented by Verma Ayush</h3>
+            <h3 style="padding: 0px; margin: 5px; color: green;">Under the guidance of Dr. Geetha V.</h3>
+            <h5 style="padding: 0px; margin: 5px; color: green;">(Assistant Professor, IT Department NITK)</h5>
+        </div>
+    </body>
+</html>
