@@ -10,12 +10,12 @@ IT479M denotes Prediction of different crops based on different soil nutrients .
 2. Mango
    
 3. Mulberry
+
+4. Pomegranate
    
-4. Potato
+5. Potato
    
-5. Ragi
-   
-6. Pomegranate.
+6. Ragi.
 
 # 4 ML Algorithms and 1 DL algorithms are :
 
